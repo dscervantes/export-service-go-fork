@@ -122,7 +122,7 @@ var _ = Describe("The public API", func() {
 
 			today := time.Now().Format("2006-01-02")
 
-			req, err := http.NewRequest("GET", fmt.Sprintf("/api/export/v1/exports?created=%s", today), nil)
+			req, err := http.NewRequest("GET", fmt.Sprintf("/api/export/v1/exports?created_at=%s", today), nil)
 
 			req.Header.Set("Content-Type", "application/json")
 
@@ -145,7 +145,7 @@ var _ = Describe("The public API", func() {
 
 			today := time.Now().Format(time.RFC3339)
 
-			req, err := http.NewRequest("GET", fmt.Sprintf("/api/export/v1/exports?created=%s", today), nil)
+			req, err := http.NewRequest("GET", fmt.Sprintf("/api/export/v1/exports?created_at=%s", today), nil)
 
 			req.Header.Set("Content-Type", "application/json")
 
@@ -167,7 +167,7 @@ var _ = Describe("The public API", func() {
 
 			yesterday := time.Now().AddDate(0, 0, -1).Format("2006-01-02")
 
-			req, err := http.NewRequest("GET", fmt.Sprintf("/api/export/v1/exports?created=%s", yesterday), nil)
+			req, err := http.NewRequest("GET", fmt.Sprintf("/api/export/v1/exports?created_at=%s", yesterday), nil)
 
 			req.Header.Set("Content-Type", "application/json")
 
@@ -189,7 +189,7 @@ var _ = Describe("The public API", func() {
 
 			today := time.Now().AddDate(0, 0, 1).Format("2006-01-02")
 
-			req, err := http.NewRequest("GET", fmt.Sprintf("/api/export/v1/exports?expires=%s", today), nil)
+			req, err := http.NewRequest("GET", fmt.Sprintf("/api/export/v1/exports?expires_at=%s", today), nil)
 
 			req.Header.Set("Content-Type", "application/json")
 
